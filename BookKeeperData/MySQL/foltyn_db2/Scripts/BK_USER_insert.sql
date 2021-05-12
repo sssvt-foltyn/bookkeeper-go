@@ -1,4 +1,6 @@
-USE foltyn_db1;
+USE foltyn_db2;
+
+
 INSERT INTO foltyn_db1.BK_USER (USERNAME, PASSWORD)
             VALUES  ('igor',   'xyz')
 ;

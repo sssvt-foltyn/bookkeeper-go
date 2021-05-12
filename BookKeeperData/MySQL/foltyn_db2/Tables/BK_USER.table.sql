@@ -1,5 +1,6 @@
 USE foltyn_db2;
 
+
 CREATE TABLE BK_USER
 (
   ID               INT             AUTO_INCREMENT  NOT NULL,

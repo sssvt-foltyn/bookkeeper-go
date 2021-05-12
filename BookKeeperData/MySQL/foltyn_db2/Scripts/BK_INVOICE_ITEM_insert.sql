@@ -1,4 +1,4 @@
-USE foltyn_db1;
+USE foltyn_db2;
 
 
 INSERT INTO
