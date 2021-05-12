@@ -7,7 +7,7 @@ CREATE TABLE BK_RECEIPT_ITEM
   RECEIPT_ID            INT                             NOT NULL,
   ORDINAL               INT                             NOT NULL,
   DESCRIPTION           VARCHAR(200)                        NULL,
-  ACCOUNTING_CODE_ID    INT                         NOT NULL,
+  ACCOUNTING_CODE_ID    INT                             NOT NULL,
   AMOUNT                DECIMAL(10,2)                   NOT NULL,
 
   CONSTRAINT PK_BK_RECEIPT_ITEM  PRIMARY KEY (ID),

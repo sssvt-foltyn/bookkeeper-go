@@ -7,6 +7,7 @@ CREATE TABLE BK_ACCOUNTING_CODE
   CODE                  VARCHAR(20)                     NOT NULL,
   NAME                  VARCHAR(100)                    NOT NULL,
   NOTE                  VARCHAR(512)                        NULL,
+  IS_TAXABLE            BOOLEAN                         NOT NULL,
 
   CONSTRAINT PK_BK_ACCOUNTING_CODE  PRIMARY KEY (ID)
 );

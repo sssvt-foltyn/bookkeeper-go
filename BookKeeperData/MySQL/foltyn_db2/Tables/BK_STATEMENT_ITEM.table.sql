@@ -8,7 +8,7 @@ CREATE TABLE BK_STATEMENT_ITEM
   ORDINAL               INT                             NOT NULL,
   DATE_TRANSACTION      DATE                                NULL,
   DESCRIPTION           VARCHAR(200)                        NULL,
-  ACCOUNTING_CODE_ID    INT                         NOT NULL,
+  ACCOUNTING_CODE_ID    INT                             NOT NULL,
   CONTACT_ID            INT                                 NULL,
   AMOUNT                DECIMAL(10,2)                   NOT NULL,
   CONTRA_ACCOUNT        VARCHAR(50)                         NULL,
