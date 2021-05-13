@@ -1,9 +1,29 @@
 USE foltyn_db2;
 
 
-INSERT INTO foltyn_db1.BK_USER (USERNAME, PASSWORD)
-            VALUES  ('igor',   'xyz')
+INSERT INTO
+  BK_USER
+  (
+    -- ID,
+    USERNAME,
+    PASSWORD
+  )
+  SELECT
+    -- 1              AS ID,
+    'igor'         AS USERNAME,
+    'xyz'          AS PASSWORD
 ;
-INSERT INTO foltyn_db1.BK_USER (USERNAME, PASSWORD)
-            VALUES  ('nasta',  'abc')
+
+
+INSERT INTO
+  BK_USER
+  (
+    -- ID,
+    USERNAME,
+    PASSWORD
+  )
+  SELECT
+    -- 2              AS ID,
+    'nasta'        AS USERNAME,
+    'abc'          AS PASSWORD
 ;
