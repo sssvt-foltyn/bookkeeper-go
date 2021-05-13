@@ -209,7 +209,7 @@ INSERT INTO
     IS_TAXABLE
   )
   SELECT
-    -- 14              AS ID,
+    -- 12              AS ID,
     'NJP'                                                 AS CODE,
     'nezapočítávat - jiné příjmy'                         AS NAME,
     'Příjmy a výdaje nezahrnované do základu daně - ostatní příjmy'   AS NOTE,
@@ -227,7 +227,7 @@ INSERT INTO
     IS_TAXABLE
   )
   SELECT
-    -- 15              AS ID,
+    -- 13              AS ID,
     'NJV'                                                 AS CODE,
     'nezapočítávat - jiné výdaje'                         AS NAME,
     'Příjmy a výdaje nezahrnované do základu daně - ostatní výdaje'   AS NOTE,
