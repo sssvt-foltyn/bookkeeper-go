@@ -255,3 +255,99 @@ INSERT INTO
     '48089'                          AS ADDRESS_ZIP,
     'US'                             AS ADDRESS_COUNTRY
 ;
+
+
+INSERT INTO
+  BK_CONTACT
+  (
+    -- ID,
+    NAME,
+    ICO,
+    DIC,
+    BANK_ACCOUNT,
+    MOBILE,
+    EMAIL,
+    WWW,
+    ADDRESS_STREET,
+    ADDRESS_CITY,
+    ADDRESS_ZIP,
+    ADDRESS_COUNTRY
+  )
+  SELECT
+    -- 9                                AS ID,
+    'FÚ Praha - Územní pracoviště pro Prahu 8'      AS NAME,
+    '72080043'                       AS ICO,
+    NULL                             AS DIC,
+    '721-77628031/0710'              AS BANK_ACCOUNT,
+    '+420 266 013 111'               AS MOBILE,
+    'podatelna2008@fs.mfcz.cz'       AS EMAIL,
+    'www.financnisprava.cz'          AS WWW,
+    'Trojská 13a'                    AS ADDRESS_STREET,
+    'Praha 8'                        AS ADDRESS_CITY,
+    '18000'                          AS ADDRESS_ZIP,
+    'CZ'                             AS ADDRESS_COUNTRY
+;
+
+
+INSERT INTO
+  BK_CONTACT
+  (
+    -- ID,
+    NAME,
+    ICO,
+    DIC,
+    BANK_ACCOUNT,
+    MOBILE,
+    EMAIL,
+    WWW,
+    ADDRESS_STREET,
+    ADDRESS_CITY,
+    ADDRESS_ZIP,
+    ADDRESS_COUNTRY
+  )
+  SELECT
+    -- 10                               AS ID,
+    'MojeFirma.cz'                   AS NAME,
+    '99887766'                       AS ICO,
+    'CZ99887766'                     AS DIC,
+    '11223344/0800'                  AS BANK_ACCOUNT,
+    '+420 602 123 456'               AS MOBILE,
+    'info@mojefirma.cz'              AS EMAIL,
+    'www.mojefirma.cz'               AS WWW,
+    'U mne doma 1b'                  AS ADDRESS_STREET,
+    'Praha 8'                        AS ADDRESS_CITY,
+    '18100'                          AS ADDRESS_ZIP,
+    'CZ'                             AS ADDRESS_COUNTRY
+;
+
+
+INSERT INTO
+  BK_CONTACT
+  (
+    -- ID,
+    NAME,
+    ICO,
+    DIC,
+    BANK_ACCOUNT,
+    MOBILE,
+    EMAIL,
+    WWW,
+    ADDRESS_STREET,
+    ADDRESS_CITY,
+    ADDRESS_ZIP,
+    ADDRESS_COUNTRY
+  )
+  SELECT
+    -- 11                               AS ID,
+    'Vodafone Czech Republic a. s.'  AS NAME,
+    '25788001'                       AS ICO,
+    'CZ25788001'                     AS DIC,
+    '117292/0300'                    AS BANK_ACCOUNT,
+    '+420 271 171 111'               AS MOBILE,
+    'poptavka@vodafone.cz'           AS EMAIL,
+    'www.vodafone.cz'                AS WWW,
+    'náměstí Junkových 2'            AS ADDRESS_STREET,
+    'Praha 5'                        AS ADDRESS_CITY,
+    '15500'                          AS ADDRESS_ZIP,
+    'CZ'                             AS ADDRESS_COUNTRY
+;
