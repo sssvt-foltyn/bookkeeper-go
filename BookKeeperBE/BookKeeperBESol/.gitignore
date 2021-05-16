@@ -1,0 +1,6 @@
+*.suo
+*.csproj.user
+.vs
+obj
+bin
+packages
