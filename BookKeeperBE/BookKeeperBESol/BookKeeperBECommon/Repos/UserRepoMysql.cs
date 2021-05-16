@@ -175,7 +175,81 @@ namespace BookKeeperBECommon.Repos
             }
             if (user.Username != null)
             {
-                query = query.Where(u => u.Username == user.Username);
+                //query = query.Where(u => u.Username == user.Username);
+                string username = user.Username;
+                //if ( ! username.Contains('*') )
+                //{
+                //    query = query.Where(u => u.Username == username);
+                //}
+                //else
+                //{
+                //    // For search terms like 'ba*', replace '*' with '%' and use LIKE (e.g. WHERE USERNAME LIKE 'ba%').
+                //    //username = username.Replace('*', '%');
+                //    //query = query.Where(u => SqlMethods.Like(u.Username, username));
+                //}
+                int countStars = username.Count(c => c == '*');
+                switch (countStars)
+                {
+                    case 0:
+                        // No asterisks (wildcards) at all.
+                        query = query.Where(u => u.Username == username);
+                        break;
+                    case 1:
+                        // One asterisk.
+                        // One asterisk may be at the beginning, in the middle or at the end of the search term.
+                        if (username.Length > 1)
+                        {
+                            // Expect one non-asterisk character at least.
+                            if (username[0] == '*')
+                            {
+                                // Wildcard at the beginning of the search term.
+                                // WHERE USERNAME LIKE '%ba'
+                                string term = username.Substring(1);
+                                query = query.Where(u => u.Username.EndsWith(term));
+                                //query = query.Where(u => u.Username.EndsWith(term, StringComparison.OrdinalIgnoreCase));
+                            }
+                            else if (username[username.Length - 1] == '*')
+                            {
+                                // Wildcard at the end of the search term.
+                                // WHERE USERNAME LIKE 'ba%'
+                                string term = username.Substring(0, username.Length - 1);
+                                query = query.Where(u => u.Username.StartsWith(term));
+                                //query = query.Where(u => u.Username.StartsWith(term, StringComparison.OrdinalIgnoreCase));
+                            }
+                            else
+                            {
+                                // Wildcard in the middle of the search term.
+                                // WHERE USERNAME LIKE 'na%ta'
+                                // There must be at least 3 characters in such a string.
+                                if (username.Length < 3)
+                                {
+                                    // This should never happen.
+                                    throw new Exception($"This situation is not expected. The search term: {username}");
+                                }
+                                string[] terms = username.Split('*');
+                                query = query.Where(u => u.Username.StartsWith(terms[0]) && u.Username.EndsWith(terms[1]));
+                                //query = query.Where(u => u.Username.StartsWith(terms[0], StringComparison.OrdinalIgnoreCase) && u.Username.EndsWith(terms[1], StringComparison.OrdinalIgnoreCase));
+                            }
+                        }
+                        break;
+                    case 2:
+                        // In case of two asterisks, we expect only this: *ba*. No other variants are allowed.
+                        if (!((username.IndexOf('*') == 0) && (username.LastIndexOf('*') == username.Length - 1)))
+                        {
+                            throw new NotSupportedException($"This search term is not supported: {username}");
+                        }
+                        if (username.Length > 2)
+                        {
+                            // Expect one non-asterisk character at least.
+                            // WHERE USERNAME LIKE '%ba%'
+                            string term = username.Substring(1, username.Length - 2);
+                            query = query.Where(u => u.Username.Contains(term));
+                            //query = query.Where(u => u.Username.Contains(term, StringComparison.OrdinalIgnoreCase));
+                        }
+                        break;
+                    default:
+                        throw new NotSupportedException($"This search term is not supported: {username}");
+                }
             }
             // ...
 

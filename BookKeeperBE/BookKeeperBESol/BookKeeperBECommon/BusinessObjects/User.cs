@@ -28,6 +28,13 @@ namespace BookKeeperBECommon.BusinessObjects
 
 
 
+        public override string ToString()
+        {
+            return $"User: ID={this.ID} Username={this.Username}";
+        }
+
+
+
     }
 
 

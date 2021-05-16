@@ -42,9 +42,9 @@ namespace BookKeeperBERest
 
             // Fix the CORS issue.
             // Chrome:
-            // Access to XMLHttpRequest at 'http://localhost:10789/api/heroes' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+            // Access to XMLHttpRequest at 'http://localhost:10789/api/users' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
             // Firefox:
-            // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:10789/api/heroes. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing)
+            // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:10789/api/users. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing)
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -54,9 +54,9 @@ namespace BookKeeperBERest
                         builder.WithOrigins("http://localhost:4200")
                             // Another CORS issue.
                             // Firefox:
-                            // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:10789/api/heroes. (Reason: Did not find method in CORS header ‘Access-Control-Allow-Methods’).
-                            // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:10789/api/heroes. (Reason: CORS request did not succeed).
-                            // Object { headers: {…}, status: 0, statusText: "Unknown Error", url: "http://localhost:10789/api/heroes", ok: false, name: "HttpErrorResponse", message: "Http failure response for http://localhost:10789/api/heroes: 0 Unknown Error", error: error }
+                            // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:10789/api/users. (Reason: Did not find method in CORS header ‘Access-Control-Allow-Methods’).
+                            // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:10789/api/users. (Reason: CORS request did not succeed).
+                            // Object { headers: {…}, status: 0, statusText: "Unknown Error", url: "http://localhost:10789/api/users", ok: false, name: "HttpErrorResponse", message: "Http failure response for http://localhost:10789/api/users: 0 Unknown Error", error: error }
                             .WithMethods("GET", "PUT", "POST", "DELETE", "OPTIONS")
                             .WithHeaders(HeaderNames.ContentType)
                             ;
@@ -87,14 +87,14 @@ namespace BookKeeperBERest
 
             app.UseRouting();
 
-            // BE: http://localhost:10789/api/heroes (this app)
+            // BE: http://localhost:10789/api/users (this app)
             // FE: http://localhost:4200 (Angular)
             // ***
             // Fix the CORS issue.
             // Chrome:
-            // Access to XMLHttpRequest at 'http://localhost:10789/api/heroes' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+            // Access to XMLHttpRequest at 'http://localhost:10789/api/users' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
             // Firefox:
-            // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:10789/api/heroes. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing)
+            // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:10789/api/users. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing)
             app.UseCors();
 
             app.UseAuthorization();
