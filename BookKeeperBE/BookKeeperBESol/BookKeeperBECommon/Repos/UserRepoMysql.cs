@@ -9,7 +9,7 @@ using BookKeeperBECommon.EF;
 
 
 
-namespace BookKeeperCommon.Repos
+namespace BookKeeperBECommon.Repos
 {
 
 
@@ -33,6 +33,7 @@ namespace BookKeeperCommon.Repos
 
                 var query = from u in context.Users
                             select u;
+                //var query = context.Users;
                 var users = query.ToList<User>();
 
                 return users;
