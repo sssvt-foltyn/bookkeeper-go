@@ -11,4 +11,13 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\Libs\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework">
+      <HintPath>..\Libs\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -10,6 +10,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitIgnore", "GitIgnore", "{
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{62B30499-9B8C-46DD-B298-102F764AB12C}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\MySql.Data.dll = Libs\MySql.Data.dll
+		Libs\MySql.Data.EntityFramework.dll = Libs\MySql.Data.EntityFramework.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,6 +1,15 @@
+# Ignore local profile-related files.
 *.suo
 *.csproj.user
 .vs
+
+# Ignore files in compile/build directories.
 obj
 bin
+
+# Ignore NuGet packages.
 packages
+
+# GitHub does not accept licensed DLL libraries.
+MySql.Data.dll
+MySql.Data.EntityFramework.dll
