@@ -234,3 +234,39 @@ INSERT INTO
     FALSE                                                 AS IS_TAXABLE
 ;
 
+
+INSERT INTO
+  BK_ACCOUNTING_CODE
+  (
+    -- ID,
+    CODE,
+    NAME,
+    NOTE,
+    IS_TAXABLE
+  )
+  SELECT
+    -- 14              AS ID,
+    'SZR'                                                 AS CODE,
+    'stavy - začátek roku'                                AS NAME,
+    'Stavy financí nezahrnované do základu daně - stav na začátku roku'   AS NOTE,
+    FALSE                                                 AS IS_TAXABLE
+;
+
+
+INSERT INTO
+  BK_ACCOUNTING_CODE
+  (
+    -- ID,
+    CODE,
+    NAME,
+    NOTE,
+    IS_TAXABLE
+  )
+  SELECT
+    -- 15              AS ID,
+    'SKR'                                                 AS CODE,
+    'stavy - konec roku'                                  AS NAME,
+    'Stavy financí nezahrnované do základu daně - stav na konci roku'   AS NOTE,
+    FALSE                                                 AS IS_TAXABLE
+;
+
