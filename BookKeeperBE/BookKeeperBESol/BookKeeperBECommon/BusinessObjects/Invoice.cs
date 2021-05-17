@@ -30,6 +30,10 @@ namespace BookKeeperBECommon.BusinessObjects
 
 
 
+        public IList<InvoiceItem> InvoiceItems { get; set; }
+
+
+
     }
 
 

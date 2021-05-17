@@ -23,6 +23,10 @@ namespace BookKeeperBECommon.BusinessObjects
 
 
 
+        public IList<StatementItem> StatementItems { get; set; }
+
+
+
     }
 
 
