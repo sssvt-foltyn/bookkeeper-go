@@ -11,7 +11,7 @@ namespace BookKeeperBEMain
 
             EFMysqlTest.LaunchTestSuite();
 
-            Console.ReadKey(true);
+            //Console.ReadKey(true);
         }
     }
 }
